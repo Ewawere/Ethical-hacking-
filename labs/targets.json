@@ -1,0 +1,15 @@
+{
+  "allowed_ranges": [
+    "10.0.2.0/24",
+    "192.168.56.0/24"
+  ],
+  "targets": [
+    "10.0.2.15",
+    "10.0.2.20",
+    "192.168.56.10"
+  ],
+  "notes": [
+    "Only use on your own lab network.",
+    "Never test public or third-party systems."
+  ]
+}
