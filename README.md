@@ -10,44 +10,54 @@ Important:
 - Use only local vulnerable apps or devices you own
 - This is for training and education only
 
+## Run it on your phone
+
+### 1) Install Termux
+Install Termux from F-Droid or its official source.
+
+### 2) Install Python and Nmap
+```bash
+pkg update && pkg upgrade
+pkg install git python nmap
+```
+
+### 3) Clone the project
+```bash
+cd $HOME
+git clone https://github.com/Ewawere/Ethical-hacking-.git
+cd Ethical-hacking-
+```
+
+### 4) Start the site locally
+```bash
+python3 -m http.server 8000
+```
+
+Then open in your browser:
+```text
+http://localhost:8000/app/
+```
+
+To install it like an app on Android:
+- open the site in Chrome or Edge
+- tap the menu button
+- choose "Add to Home screen"
+
+### 5) Run the lab tools in Termux
+Only on your own local lab network:
+```bash
+python3 scripts/scan_lab.py 10.0.2.0/24
+```
+
 ## Features
-- Desktop-like UI optimized for mobile
-- Local vulnerable apps via Docker
-- Safe reconnaissance tooling
-- Learning modules for security workflows
-- Report generation for practical exercises
-
-## Tech stack
-- Python
-- Docker
-- Nmap
-- HTML/CSS/JS
-- Local-only lab network
-
-## Quick start
-1. Install Docker
-2. Install Python 3
-3. Install Nmap
-4. Start the lab:
-   python scripts/lab_manager.py start
-5. Open the app in a browser
-6. Use the local dashboard to run scans and track exercises
-
-## Lab targets
-Use only IP ranges you own, such as:
-- 10.0.2.0/24
-- 192.168.56.0/24
-
-## Learning flow
-1. Set up the lab
-2. Recon the network
-3. Enumerate services
-4. Review exposures
-5. Build reports
-6. Document remediation
+- Desktop-like interface optimized for mobile
+- Installable PWA experience
+- Local-only lab controls
+- Safe recon and reporting tools
+- Realistic learning workflow without public scanning
 
 ## Folder overview
-- app/ = dashboard UI
-- labs/ = vulnerable Docker apps
-- scripts/ = safe scanning and report tools
-- docs/ = study guides and setup instructions
+- app/ = installable web dashboard
+- labs/ = local vulnerable apps
+- scripts/ = safe recon and reporting tools
+- docs/ = setup and learning path

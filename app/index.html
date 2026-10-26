@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
     <title>Ethical Hacking Lab</title>
+    <meta name="description" content="Local ethical hacking lab dashboard for mobile and desktop practice." />
+    <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -14,11 +17,11 @@
         </div>
 
         <nav>
-          <button class="nav-btn active">Overview</button>
-          <button class="nav-btn">Recon</button>
-          <button class="nav-btn">Enumeration</button>
-          <button class="nav-btn">Web Apps</button>
-          <button class="nav-btn">Reports</button>
+          <button class="nav-btn active" data-panel="overview">Overview</button>
+          <button class="nav-btn" data-panel="recon">Recon</button>
+          <button class="nav-btn" data-panel="enum">Enumeration</button>
+          <button class="nav-btn" data-panel="web">Web Apps</button>
+          <button class="nav-btn" data-panel="reports">Reports</button>
         </nav>
       </aside>
 
@@ -34,37 +37,62 @@
           </div>
         </header>
 
-        <section class="cards">
-          <div class="card">
-            <h3>Scope</h3>
-            <p>Only local lab networks</p>
+        <section id="overview" class="panel visible">
+          <div class="cards">
+            <div class="card">
+              <h3>Scope</h3>
+              <p>Only local lab networks</p>
+            </div>
+            <div class="card">
+              <h3>Targets</h3>
+              <p>10.0.2.0/24</p>
+            </div>
+            <div class="card">
+              <h3>Status</h3>
+              <p>Lab online</p>
+            </div>
           </div>
-          <div class="card">
-            <h3>Targets</h3>
-            <p>10.0.2.0/24</p>
-          </div>
-          <div class="card">
-            <h3>Status</h3>
-            <p>Lab online</p>
+
+          <div class="terminal-panel">
+            <div class="panel-header">Terminal</div>
+            <div id="terminal" class="terminal"></div>
           </div>
         </section>
 
-        <section class="terminal-panel">
-          <div class="panel-header">Terminal</div>
-          <div id="terminal" class="terminal">
-            $ python scripts/scan_lab.py 10.0.2.0/24
-            <br />
-            [+] Scanning authorized lab network...
-          </div>
+        <section id="recon" class="panel">
+          <div class="panel-header">Recon Mission</div>
+          <ul class="mission-list">
+            <li>Confirm authorized scope</li>
+            <li>Discover active hosts</li>
+            <li>Check exposed services</li>
+            <li>Document findings</li>
+          </ul>
         </section>
 
-        <section class="module-panel">
-          <h3>Current Module</h3>
-          <ul>
-            <li>Reconnaissance</li>
-            <li>Service enumeration</li>
-            <li>Finding active hosts</li>
-            <li>Analyzing exposed services</li>
+        <section id="enum" class="panel">
+          <div class="panel-header">Enumeration</div>
+          <ul class="mission-list">
+            <li>Review ports and service banners</li>
+            <li>Identify HTTP, SSH, SMB, and API exposure</li>
+            <li>Map attack surface</li>
+          </ul>
+        </section>
+
+        <section id="web" class="panel">
+          <div class="panel-header">Web App Practice</div>
+          <ul class="mission-list">
+            <li>Review app auth flow</li>
+            <li>Test parameter handling</li>
+            <li>Document app exposure</li>
+          </ul>
+        </section>
+
+        <section id="reports" class="panel">
+          <div class="panel-header">Reporting</div>
+          <ul class="mission-list">
+            <li>Summarize risk</li>
+            <li>Write findings</li>
+            <li>Recommend remediation</li>
           </ul>
         </section>
       </main>

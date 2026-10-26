@@ -24,6 +24,10 @@ html, body {
   min-height: 100vh;
 }
 
+body {
+  min-height: 100vh;
+}
+
 .desktop {
   display: flex;
   min-height: 100vh;
@@ -102,7 +106,7 @@ html, body {
   margin-bottom: 20px;
 }
 
-.card, .terminal-panel, .module-panel {
+.card, .terminal-panel, .panel {
   background: rgba(18, 27, 45, 0.85);
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -118,9 +122,19 @@ html, body {
   margin-bottom: 20px;
 }
 
+.panel {
+  display: none;
+  margin-bottom: 18px;
+}
+
+.panel.visible {
+  display: block;
+}
+
 .panel-header {
   color: var(--muted);
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .terminal {
@@ -134,9 +148,10 @@ html, body {
   line-height: 1.6;
 }
 
-.module-panel ul {
+.mission-list {
   padding-left: 18px;
   color: var(--muted);
+  line-height: 1.8;
 }
 
 @media (max-width: 700px) {
