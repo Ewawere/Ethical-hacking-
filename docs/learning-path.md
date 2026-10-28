@@ -1,34 +1,36 @@
-# Learning Path
+# Beginner learning path
 
-## Stage 1: Foundations
+## Phase 1: Foundations
 - Linux basics
 - Networking basics
-- TCP/IP and ports
-- HTTP concepts
-- DNS basics
+- IP addresses and ports
+- DNS and HTTP basics
 
-## Stage 2: Reconnaissance
-- Host discovery
-- Port scanning
-- Service enumeration
-- Banner analysis
+## Phase 2: Reconnaissance
+- host discovery
+- port scanning
+- service detection
+- identifying open services
 
-## Stage 3: Web and Application Security
-- HTTP request flow
-- Forms and auth
-- Parameter tampering
-- Common vulnerabilities
-- OWASP Top 10
+## Phase 3: Enumeration
+- review service banners
+- discover HTTP endpoints
+- identify exposed app surfaces
 
-## Stage 4: Reporting
-- Summarize findings
-- Document impact
-- Recommend remediation
-- Risk-scoring and severity
+## Phase 4: Web basics
+- auth flow
+- cookies and headers
+- requests and parameters
+- common vulnerabilities
 
-## Stage 5: Real-world workflow
-- Scope definition
-- Discovery
-- Enumeration
-- Risk review
-- Final report creation
+## Phase 5: Reporting
+- findings summary
+- impact assessment
+- remediation steps
+- clear documentation
+
+## Good practice
+- keep scope tight
+- document everything
+- never test outside your own authorized environment
+- focus on understanding the workflow before doing exploit work

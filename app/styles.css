@@ -1,177 +1,238 @@
-:root {
-  --bg: #0b1020;
-  --panel: #121b2d;
-  --panel-alt: #1a2438;
-  --line: #2a3a52;
-  --text: #eaf2ff;
-  --muted: #9db0d1;
-  --green: #7ee787;
-  --yellow: #f5d76e;
-  --red: #ff7b72;
-  --accent: #58a6ff;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
+    <title>Ethical Hacking Lab</title>
+    <meta
+      name="description"
+      content="A local-only ethical hacking learning dashboard for authorized practice and study."
+    />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-badge">EH</span>
+          <div>
+            <h1>Ethical Lab</h1>
+            <small>Authorized learning</small>
+          </div>
+        </div>
 
-* {
-  box-sizing: border-box;
-}
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-item active" data-target="overview">Overview</button>
+          <button class="nav-item" data-target="setup">Setup</button>
+          <button class="nav-item" data-target="recon">Recon</button>
+          <button class="nav-item" data-target="enumeration">Enumeration</button>
+          <button class="nav-item" data-target="web">Web Security</button>
+          <button class="nav-item" data-target="reporting">Reporting</button>
+          <button class="nav-item" data-target="resources">Resources</button>
+        </nav>
+      </aside>
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0a0f1c, #101827);
-  color: var(--text);
-  min-height: 100vh;
-}
+      <main class="main">
+        <header class="topbar">
+          <div class="window-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <h2>Learning workflow</h2>
+        </header>
 
-body {
-  min-height: 100vh;
-}
+        <section id="overview" class="panel active">
+          <div class="hero">
+            <div>
+              <p class="eyebrow">Beginner track</p>
+              <h3>Learn ethical hacking the safe way</h3>
+              <p>
+                This project is for authorized practice on a lab network you own or control.
+                It is designed to teach the real workflow, not shortcuts.
+              </p>
+            </div>
+          </div>
 
-.desktop {
-  display: flex;
-  min-height: 100vh;
-}
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span>Scope</span>
+              <strong>Local lab only</strong>
+            </div>
+            <div class="stat-card">
+              <span>Goal</span>
+              <strong>Learn workflow</strong>
+            </div>
+            <div class="stat-card">
+              <span>Safety</span>
+              <strong>Authorized only</strong>
+            </div>
+          </div>
 
-.sidebar {
-  width: 220px;
-  background: rgba(12, 18, 28, 0.9);
-  border-right: 1px solid var(--line);
-  padding: 20px 16px;
-}
+          <div class="lesson-box">
+            <h4>Core sequence</h4>
+            <ol>
+              <li>Set up a private lab</li>
+              <li>Learn the basics of networking and Linux</li>
+              <li>Perform discovery and scanning</li>
+              <li>Review services and exposure</li>
+              <li>Write clear findings and fixes</li>
+            </ol>
+          </div>
+        </section>
 
-.brand {
-  margin-bottom: 30px;
-}
+        <section id="setup" class="panel">
+          <h3>Setup</h3>
+          <div class="card-list">
+            <div class="info-card">
+              <h4>Requirements</h4>
+              <ul>
+                <li>Private lab network or local VM</li>
+                <li>Python 3</li>
+                <li>Docker or a Linux VM</li>
+                <li>Tools like Nmap, curl, Wireshark</li>
+              </ul>
+            </div>
 
-.brand h1 {
-  font-size: 1.8rem;
-  letter-spacing: 0.2em;
-}
+            <div class="info-card">
+              <h4>Recommended targets</h4>
+              <ul>
+                <li>DVWA</li>
+                <li>Juice Shop</li>
+                <li>WebGoat</li>
+                <li>Metasploitable</li>
+              </ul>
+            </div>
+          </div>
 
-.nav-btn {
-  width: 100%;
-  margin: 8px 0;
-  padding: 12px 14px;
-  background: transparent;
-  border: 1px solid var(--line);
-  color: var(--text);
-  border-radius: 8px;
-  text-align: left;
-  cursor: pointer;
-}
+          <div class="code-box">
+            <pre>python3 --version
+python3 -m http.server 8000</pre>
+          </div>
+        </section>
 
-.nav-btn.active {
-  background: var(--panel-alt);
-  border-color: var(--accent);
-}
+        <section id="recon" class="panel">
+          <h3>Reconnaissance</h3>
+          <div class="card-list">
+            <div class="info-card">
+              <h4>Goal</h4>
+              <p>Identify live hosts, open ports, and exposed services on your own test network.</p>
+            </div>
+            <div class="info-card">
+              <h4>Common tasks</h4>
+              <ul>
+                <li>Network discovery</li>
+                <li>Port scanning</li>
+                <li>Service detection</li>
+                <li>Banner review</li>
+              </ul>
+            </div>
+          </div>
 
-.content {
-  flex: 1;
-  padding: 20px;
-}
+          <div class="code-box">
+            <pre>nmap -sV -Pn 10.0.2.0/24</pre>
+          </div>
+        </section>
 
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(18, 27, 45, 0.85);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 12px 18px;
-  margin-bottom: 20px;
-}
+        <section id="enumeration" class="panel">
+          <h3>Enumeration</h3>
+          <div class="card-list">
+            <div class="info-card">
+              <h4>Focus</h4>
+              <p>Learn what each host exposes and what services are active.</p>
+            </div>
+            <div class="info-card">
+              <h4>Examples</h4>
+              <ul>
+                <li>HTTP on port 80/443</li>
+                <li>SSH on port 22</li>
+                <li>SMB / database exposure</li>
+                <li>API endpoint discovery</li>
+              </ul>
+            </div>
+          </div>
 
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 8px;
-}
+          <div class="code-box">
+            <pre>nmap -sV -p- 192.168.56.0/24</pre>
+          </div>
+        </section>
 
-.green { background: var(--green); }
-.yellow { background: var(--yellow); }
-.red { background: var(--red); }
+        <section id="web" class="panel">
+          <h3>Web Security Basics</h3>
+          <div class="card-list">
+            <div class="info-card">
+              <h4>Core lessons</h4>
+              <ul>
+                <li>HTTP methods</li>
+                <li>Headers and cookies</li>
+                <li>Auth flow review</li>
+                <li>Input handling</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>Common issues</h4>
+              <ul>
+                <li>XSS</li>
+                <li>SQL injection</li>
+                <li>Broken access control</li>
+                <li>CSRF</li>
+              </ul>
+            </div>
+          </div>
 
-.title-wrap h2 {
-  margin: 0;
-  font-size: 1.2rem;
-}
+          <div class="code-box">
+            <pre>curl -I http://localhost:8081
+curl -X POST http://localhost:8081</pre>
+          </div>
+        </section>
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin-bottom: 20px;
-}
+        <section id="reporting" class="panel">
+          <h3>Reporting and remediation</h3>
+          <div class="card-list">
+            <div class="info-card">
+              <h4>What to document</h4>
+              <ul>
+                <li>Finding summary</li>
+                <li>Risk and impact</li>
+                <li>Evidence</li>
+                <li>Fix recommendation</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>Good reporting habits</h4>
+              <p>Be factual, avoid speculation, and explain both the issue and the fix clearly.</p>
+            </div>
+          </div>
+        </section>
 
-.card, .terminal-panel, .panel {
-  background: rgba(18, 27, 45, 0.85);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 16px;
-}
+        <section id="resources" class="panel">
+          <h3>Resources</h3>
+          <div class="card-list">
+            <div class="info-card">
+              <h4>Free learning sites</h4>
+              <ul>
+                <li>TryHackMe</li>
+                <li>Hack The Box</li>
+                <li>PortSwigger Web Security Academy</li>
+                <li>OWASP</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>Tools you will use</h4>
+              <ul>
+                <li>Nmap</li>
+                <li>curl</li>
+                <li>Wireshark</li>
+                <li>Burp Suite</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
 
-.card h3 {
-  margin-top: 0;
-  color: var(--muted);
-}
-
-.terminal-panel {
-  margin-bottom: 20px;
-}
-
-.panel {
-  display: none;
-  margin-bottom: 18px;
-}
-
-.panel.visible {
-  display: block;
-}
-
-.panel-header {
-  color: var(--muted);
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.terminal {
-  font-family: "Courier New", monospace;
-  background: #050b14;
-  border: 1px solid var(--line);
-  padding: 14px;
-  border-radius: 8px;
-  min-height: 180px;
-  color: var(--green);
-  line-height: 1.6;
-}
-
-.mission-list {
-  padding-left: 18px;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-@media (max-width: 700px) {
-  .desktop {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .nav-btn {
-    display: inline-block;
-    width: auto;
-    margin-right: 8px;
-  }
-
-  .content {
-    padding: 12px;
-  }
-}
+    <script src="app.js"></script>
+  </body>
+</html>

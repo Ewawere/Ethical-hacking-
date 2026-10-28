@@ -1,32 +1,43 @@
-# Setup Guide
+# Setup guide
 
-## Requirements
-- Docker
+This project is a static learning dashboard and documentation site. It is not meant to be used against public networks or unknown systems.
+
+Requirements:
+- a computer, phone, or tablet you can use for browsing
+- a private local lab or VM
 - Python 3
-- Nmap
+- Docker or a local Linux VM
+- optional tools: Nmap, curl, Burp Suite, Wireshark
 
-## Step 1: Install Docker
-Install Docker Desktop or Docker Engine.
+Recommended local lab setup:
+- Use a private home network
+- Run local vulnerable apps in Docker or a VM
+- Keep everything isolated from the public internet
+- Test only machines you own or are explicitly authorized to test
 
-## Step 2: Install nmap
-Linux:
+Suggested lab targets:
+- DVWA
+- Juice Shop
+- OWASP WebGoat
+- Metasploitable
+
+Typical local workflow:
+1. Confirm scope and authorization
+2. Identify private target ranges
+3. Run Nmap or a local enumeration tool
+4. Review exposed ports and services
+5. Document findings and remediation steps
+
+Example commands:
 ```bash
-sudo apt update
-sudo apt install nmap
+python3 --version
+python3 -m http.server 8000
+nmap -sV -Pn 10.0.2.0/24
 ```
 
-## Step 3: Start lab
-```bash
-python scripts/lab_manager.py start
-```
+For mobile or iPhone use:
+- serve the frontend from a local machine or a Vercel deployment
+- open the app in Safari or Chrome
+- keep all testing inside your private local lab network
 
-## Step 4: Open the dashboard
-Open the app/index.html file in your browser.
-
-## Step 5: Scan the allowed local range
-```bash
-python scripts/scan_lab.py 10.0.2.0/24
-```
-
-## Step 6: Review findings
-Use the generated data to study service exposure and document remediation.
+This is for ethical, legal, and authorized learning only.

@@ -1,63 +1,41 @@
-# Local Ethical Hacking Lab
+# Ethical Hacking Lab
 
-A safe, local-only ethical hacking training environment for learning real-world workflow on devices you own and control.
+A realistic local-only learning environment for ethical hacking and cybersecurity fundamentals.
 
-This project is designed to simulate a real security lab while keeping everything inside a controlled environment.
+This repo is designed for a safe, legal learning setup. It is for beginners who want to understand:
+- reconnaissance
+- service enumeration
+- web app basics
+- reporting
+- local lab workflow
 
-Important:
-- Only scan targets on your own lab network
-- Never test public systems or networks without explicit authorization
-- Use only local vulnerable apps or devices you own
-- This is for training and education only
+Important rules:
+- Only scan systems you own or are explicitly authorized to test.
+- Never target public IPs, unknown hosts, or production systems.
+- Keep everything inside your own private lab or a controlled training environment.
 
-## Run it on your phone
+What this repo includes:
+- a mobile-friendly learning dashboard
+- beginner-friendly learning modules
+- local lab setup guidance
+- a route for deploying the frontend to Vercel
+- a workflow you can use on a phone, tablet, or browser
 
-### 1) Install Termux
-Install Termux from F-Droid or its official source.
+Recommended use:
+- use a private lab network at home
+- run vulnerable apps in Docker or on a local VM
+- practice on a machine you control
+- follow a legal, ethical workflow only
 
-### 2) Install Python and Nmap
-```bash
-pkg update && pkg upgrade
-pkg install git python nmap
-```
+Quick start:
+1. Open the repo in GitHub
+2. Use the static frontend in app/
+3. Follow the setup guide in docs/setup.md
+4. Keep all tests limited to your local lab network
 
-### 3) Clone the project
-```bash
-cd $HOME
-git clone https://github.com/Ewawere/Ethical-hacking-.git
-cd Ethical-hacking-
-```
+Project structure:
+- app/ - static frontend for the learning dashboard
+- docs/ - setup and learning roadmaps
+- README.md - project overview
 
-### 4) Start the site locally
-```bash
-python3 -m http.server 8000
-```
-
-Then open in your browser:
-```text
-http://localhost:8000/app/
-```
-
-To install it like an app on Android:
-- open the site in Chrome or Edge
-- tap the menu button
-- choose "Add to Home screen"
-
-### 5) Run the lab tools in Termux
-Only on your own local lab network:
-```bash
-python3 scripts/scan_lab.py 10.0.2.0/24
-```
-
-## Features
-- Desktop-like interface optimized for mobile
-- Installable PWA experience
-- Local-only lab controls
-- Safe recon and reporting tools
-- Realistic learning workflow without public scanning
-
-## Folder overview
-- app/ = installable web dashboard
-- labs/ = local vulnerable apps
-- scripts/ = safe recon and reporting tools
-- docs/ = setup and learning path
+This project is intended for education and authorized practice only.

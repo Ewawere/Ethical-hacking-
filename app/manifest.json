@@ -1,10 +1,10 @@
 {
   "name": "Ethical Hacking Lab",
   "short_name": "EthicalLab",
-  "start_url": "/app/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#0b1020",
   "theme_color": "#0b1020",
-  "description": "Local ethical hacking lab dashboard for authorized learning.",
+  "description": "Local-only ethical hacking learning dashboard.",
   "icons": []
 }
